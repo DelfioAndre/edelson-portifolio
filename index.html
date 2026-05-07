@@ -32,6 +32,9 @@
                     <span class="hero-badge">⚙️ Manutenção Autónoma</span>
                     <span class="hero-badge">🇲🇿 Nampula, Moçambique</span>
                 </div>
+                <div class="hero-actions">
+                    <button id="downloadPdf" class="download-pdf">Baixar PDF</button>
+                </div>
             </div>
         </div>
     </header>
@@ -245,7 +248,20 @@
     <footer>
         <a href="https://delfioandre.github.io/Portifolio/" target="_blank">© 2024 Délfio André</a> &nbsp;·&nbsp; Nampula, Moçambique &nbsp;·&nbsp; 
     </footer>
+    </body>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            var btn = document.getElementById('downloadPdf');
+            if(btn){
+                btn.addEventListener('click', function(){
+                    window.print();
+                });
+            }
+        });
+    </script>
+
+    </html>
 </body>
 
 </html>

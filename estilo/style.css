@@ -121,6 +121,29 @@
     display: block;
   }
 
+  /* Download PDF button */
+  .hero-actions { margin-top: 14px; }
+  .download-pdf {
+    background: var(--white);
+    color: var(--navy);
+    border: 2px solid rgba(45,53,128,0.12);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  /* Print styles: hide UI elements and optimize layout for PDF */
+  @media print {
+    @page { size: A4; margin: 20mm; }
+    body { background: #fff; color: #000; }
+    .hero-stripes, .hero-stripes-right, .download-pdf, footer { display: none !important; }
+    .main { max-width: 100% !important; margin: 0; padding: 0; grid-template-columns: 1fr !important; }
+    .sidebar { display: none !important; }
+    .card { box-shadow: none !important; border-radius: 0 !important; }
+    a::after { content: " (" attr(href) ")"; color: #000; }
+  }
+
   .hero-info { flex: 1; }
 
   .hero-info h1 {
